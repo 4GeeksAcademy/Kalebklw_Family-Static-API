@@ -16,6 +16,20 @@ class FamilyStructure:
                 "last_name": last_name,
                 "age": 33,
                 "lucky_numbers": [7, 13, 22]
+            },
+            {
+                "id": self._generate_id(),
+                "first_name": "Jane",
+                "last_name": last_name,
+                "age": 33,
+                "lucky_numbers": [10, 14, 3]
+            },
+            {
+                "id": self._generate_id(),
+                "first_name": "Jimmy",
+                "last_name": last_name,
+                "age": 33,
+                "lucky_numbers": [1]
             }
         ]
 
@@ -26,11 +40,21 @@ class FamilyStructure:
         return generated_id
 
     def add_member(self, member):
+        self._members.append(member)
+        
+
         ## You have to implement this method
         ## Append the member to the list of _members
         pass
 
     def delete_member(self, id):
+        for person in self._members:
+            if person["id"] == id:
+                self._members.remove(person)
+                return "member removed"
+            else:
+                return "no member found"
+
         ## You have to implement this method
         ## Loop the list and delete the member with the given id
         pass

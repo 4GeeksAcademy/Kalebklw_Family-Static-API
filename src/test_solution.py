@@ -18,7 +18,8 @@ def client():
 def test_first_three(client):
     response = client.get('/members')
     members = json.loads(response.data)
-    assert len(members) == 3, "The Family structure must be initialized with the 3 members specified in the instructions"
+    print("Test Function members: " ,members)
+    assert len(members["data"]) == 3, "The Family structure must be initialized with the 3 members specified in the instructions"
 
 
 @pytest.mark.it("Implement the POST /members method to add a new member")
@@ -51,7 +52,7 @@ def test_get_members_exist(client):
 def test_get_members_returns_list(client):
     response = client.get('/members')
     data = json.loads(response.data)
-    assert isinstance(data, list), "The GET /members method should return a list"
+    assert isinstance(data["data"], list), "The GET /members method should return a list"
 
 
 @pytest.mark.it("We added two members using POST /members, so calling GET /members should return a list of length == 5")
