@@ -11,21 +11,21 @@ class FamilyStructure:
         self._next_id = 1
         self._members = [
             {
-                "id": self._generate_id(),
+                "id": 3,
                 "first_name": "John",
                 "last_name": last_name,
                 "age": 33,
                 "lucky_numbers": [7, 13, 22]
             },
             {
-                "id": self._generate_id(),
+                "id": 2,
                 "first_name": "Jane",
                 "last_name": last_name,
                 "age": 33,
                 "lucky_numbers": [10, 14, 3]
             },
             {
-                "id": self._generate_id(),
+                "id": 1,
                 "first_name": "Jimmy",
                 "last_name": last_name,
                 "age": 33,
